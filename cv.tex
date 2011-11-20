@@ -1,0 +1,165 @@
+\documentclass[a4paper,10pt]{article}
+% Use letter when sending to US/other letter-based country
+%\documentclass[letterpaper,10pt]{article}
+
+% A Few Useful Packages
+\usepackage{marvosym}                     % for symbols
+\usepackage{fontspec}                     % for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} % other packages for formatting
+
+% Graphics - Colors
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Better formatting of the A4 page - wide page layout for documents that use A4 paper size
+\usepackage[big]{layaureo}
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+
+\usepackage{supertabular} % for Grades - how does it compare to regular tables?
+\usepackage{titlesec}			% custom \section - ???
+
+% Setup hyperref package (what does it do?), and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks, breaklinks, urlcolor=linkcolour, linkcolor=linkcolour}
+
+% FONTS
+\defaultfontfeatures{Mapping=tex-text} % this is just part of fontspec boilerplate
+\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+
+%CV Sections inspired by:
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+% Setup your hyphenation exceptions here:
+%\hyphenation{im-pre-se}
+
+
+% MY MACROS
+
+
+\begin{document}
+
+  \pagestyle{empty} % non-numbered pages
+
+  \font\fb=''[cmr10]'' % for use with \LaTeX command => ?????
+
+  %--------------------TITLE-------------
+  \par{\centering
+  {\Huge António \textsc{Alegria} %\textsc => small caps
+  }\bigskip\par}
+
+  % Section: Personal Data
+  \section{Personal Data}
+
+  \begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & Lisbon, Portugal  | February 6th 1985                                   \\
+    \textsc{Address:}                 & Av. Pinhal do Arneiro, 38, Verdizela, 2855-608, Portugal                \\
+    \textsc{Phone:}                   & +351 965 558 738                                                        \\
+    \textsc{email:}                   & \href{mailto:antonio.mc.alegria@gmail.com}{antonio.mc.alegria@gmail.com}
+  \end{tabular}
+
+  % Section: Work Experience at the top
+  \section{Work Experience}
+  \begin{tabular}{r|p{11cm}}
+    \emph{Current}    & Software Engineer at \textsc{Portugal Telecom - SAPO}, Lisbon                 \\
+    \textsc{Oct 2011} & \emph{Big Data Engineering}                                                   \\
+                      & \footnotesize{I develop and maintain SAPO's open source
+                                      distributed messaging platform - SAPO Broker
+                                      (https://github.com/sapo/sapo-broker) - and its real-time event
+                                      subscription and alerting platform - SAPO Alertas.
+                                      I also work on analytics projects, focusing on real-time
+                                      Business Activity Monitoring.}                                  \\
+    \multicolumn{2}{c}{}                                                                              \\
+
+    \textsc{Jul 2010-Oct 2011} & Software Engineer at \textsc{Portugal Telecom - SAPO}, Lisbon        \\
+                      & \emph{Android Development}                                                    \\
+                      & \footnotesize{My main job description was to develop native Android Apps
+                                      and reusable components as part of the SAPO (sapo.pt) Mobile
+                                      team. Due to a personal passion for product design and
+                                      business and product development, I have worked closely with
+                                      visual designers and product managers in product vision and
+                                      concept design. I have proactively lead general team process
+                                      optimizations such as bootstrapping and implementing Scrum.
+                                      As well as implementing and shipping several Android Apps and
+                                      reusable components I have maintained and developed SAPO's
+                                      flagship Android App - Banca SAPO - and have developed from
+                                      scratch its newest iteration - SAPO Notícias.}                  \\
+                      & \footnotesize{\emph{\begin{itemize}
+                          \item Implemented, shipped and maintained several Android Apps:
+                            \begin{itemize}
+                              \item Energia SAPO/TMN Live Wallpaper
+                              \item Banca SAPO 1.2.1-1.4.0, including adapting the UX to first-generation
+                                    Android tablets, such as the Samsung Galaxy Tab 7''
+                              \item Rádio swTMN 1.0
+                              \item Codebits native-web app wrapper
+                              \item SAPO Notícias
+                            \end{itemize}
+                          \item Designed and implemented several reusable components used by all
+                                internally-developed Android Apps
+                          \item Lead and implemented Scrum adoption and other general process
+                                improvements inside Mobile team
+                          \item Managed and coordinated a large part of the SAPO Notícias mobile Apps
+                                project - for Android and iOS
+                        \end{itemize}}}                                                               \\
+    \multicolumn{2}{c}{}                                                                              \\
+\newpage
+    \textsc{Sep 2008-Jul 2010} & Software Engineer at \textsc{Portugal Telecom}, Lisbon               \\
+                      & \emph{Business Activity Monitoring and CEP}                                   \\
+                      & \footnotesize{Designed and implemented core technology in real-time Business
+                                      Activity Monitoring (BAM) platform using Complex Event
+                                      Processing (CEP). Designed and implemented domain-independent
+                                      BAM patterns as well as aggregation and correlation rules for
+                                      business process and application monitoring. Managed main
+                                      production deployment of this platform for several of PT's
+                                      business processes and enterprise applications. Implemented real
+                                      monitoring scenarios for several CRM and Billing applications
+                                      and business processes in PT. Maintained in-house passive
+                                      network asset discovery system.}                                \\
+                      & \footnotesize{\emph{\begin{itemize}
+                          \item Took leadership role in designing architecture for Pulso, a next-generation BAM platform
+                          \item Designed, implemented and shipped core technology in real-time CEP platform for BAM using Esper and JRuby
+                          \item Designed and implemented domain-independent BAM patterns and aggregation and correlation rules for business process and application monitoring solutions
+                          \item Managed main production deployment of Pulso for mission-critical applications and business processes in PT
+                          \item Implemented [more than 10] real monitoring scenarios for several mission-critical business processes and applications in PT
+                          \item Implemented and maintained several passive deep network traffic analysis agents for automatic asset discovery and error detection in enterprise information systems
+                          \item Maintained in-house passive network asset discovery system
+                        \end{itemize}}}                                                               \\
+    \multicolumn{2}{c}{}                                                                              \\
+
+    \textsc{Nov 2007-Aug 2008} & Research Intern at \textsc{Portugal Telecom}, Lisbon                 \\
+                      & \footnotesize{I came into PT to develop my MSc research and apply it inside
+                                      the company. I designed and implemented a prototype that was
+                                      applied in three real-word Information Systems Architectures in
+                                      PT. As a byproduct, I implemented a wide range of passive deep
+                                      packet analysis fingerprints for application classification and
+                                      automatic application error detection. Furthermore, I designed
+                                      and implemented an automatic node classification algorithm for
+                                      an in-house network asset detection system. All of these
+                                      fingerprints and classification systems were integrated into a
+                                      in-house automatic network asset detection system - Pulso
+                                      Discovery - and used in production.}                            \\
+    \multicolumn{2}{c}{}                                                                              \\
+    \textsc{Feb 2005-Jun 2006} & Intern at \textsc{INESC-ID - Distributed Systems Group}, Lisbon\\&\footnotesize{Researched and implemented ad-hoc (mesh) network applications using Bluetooth and RF-ID.}
+  \end{tabular}
+  
+  
+  %Section: Education
+  \section{Education}
+  \begin{tabular}{rl}	
+   \textsc{November} 2009 & Master of Science in \textsc{Computer Engineering}, \textbf{Instituto Superior Técnico}, Lisbon\\
+  & 110/110 \small\emph{summa cum laude} | Major: Quantitative Finance\\
+  & Thesis: ``Sublinear and Locally Sublinear Prices'' | \small Advisor: Prof. Erio \textsc{Castagnoli}\\
+  &\normalsize \textsc{Gpa}: 28.61/30\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}\\&\\
+  \textsc{July} 2006& Undergraduate Degree in \textsc{Law} and \textsc{Business Administration} \\&110/110 \small\emph{summa cum laude}, \normalsize\textbf{Bocconi University}, Milan\\
+  & Thesis: ``Portfolio Strategies with Target Prices'' | \small Advisor: Stefano \textsc{Bonini}\\
+  &\normalsize \textsc{Gpa}: 29.85/30\hyperlink{grds_cleli}{\hfill| \footnotesize Detailed List of Exams}\\&\\
+  \textsc{Fall} 2005& Exchange Semester at \textbf{University of Southern California}, Los Angeles\\
+  &\textsc{Gpa}: 3.875/4 \hyperlink{grds_usc}{\hfill| \footnotesize Detailed List of Exams}\\&\\
+  \textsc{July} 2003& \textbf{Liceo Classico ``E. Duni''}, Matera | Final Grade: 100/100
+  \end{tabular}
+
+\end{document}

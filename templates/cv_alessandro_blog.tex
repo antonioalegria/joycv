@@ -1,0 +1,73 @@
+\documentclass[a4paper,10pt]{article}
+
+ %A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec}			%load fonts
+\usepackage{url,parskip}			%formatting
+\usepackage{xunicode,xltxtra} 	%other packages for XeTeX
+ 
+%Graphics - Colors
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+%better formatting of the A4 page
+\usepackage[big]{layaureo}
+%An alternative to Layaureo can be usepackage{fullpage}
+ 
+\usepackage{supertabular} 		%for Grades
+\usepackage{titlesec}			%custom section
+ 
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks, urlcolor=linkcolour, linkcolor=linkc
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+
+%CV Sections inspired by:
+%http://stefano.italians.nl/archives/26
+\titleformat{section}{Largescshaperaggedright}{}{0em}{}[\titlerule]
+\titlespacing{section}{0pt}{3pt}{3pt}
+
+%-------BEGIN DOCUMENT--------
+\begin{document}
+   \pagestyle{empty} % non-numbered pages
+   
+    %--------------------TITLE-------------
+   \par{\centering
+   {\Huge Alessandro \textsc{Plasmati} }
+   \bigskip\par}
+   
+    %Section: Personal Data
+   \section{Personal Data}
+   \begin{tabular}{rl}
+   \textsc{Place and Date of Birth:} & Someplace, Italy  | dd Month 1912\\
+   \textsc{Address:}	& CV Inn 19, 20301, Milano, Italy\\
+   \textsc{Phone:}	& +39 123 456789\\
+   \textsc{email:}	& \href{mailto:alessandro.plasmati@gmail.com}{alessandro.plasmati@gmail.com}\\
+   \end{tabular}
+   
+   %Section: Work Experience at the top
+   \section{Work Experience}
+   \begin{tabular}{r|p{11cm}}
+   \emph{Current} & Your job at Your Company, Town \\
+   \textsc{Jan 2009} \emph{What your company does} \\
+   & \footnotesize{A description of what you do,
+   because your job's name can be meaningless to the reader}\\
+   \multicolumn{2}{c}{}\ %this clears the space between two jobs
+   %some other job here
+   \end{tabular}
+   
+   %Section: Education
+   \section{Education}
+   \begin{tabular}{rl}
+   \textsc{July} 2008 & Master of Science in \textsc{Finance},
+   \textbf{Bocconi University}, Milan\\
+    & 110/110 \small\emph{summa cum laude}
+    | Major: Quantitative Finance\ & Thesis: ``Sublinear and Locally Sublinear Prices'' |
+   \small Advisor: Prof. Erio \textsc{Castagnoli} &\normalsize \textsc{Gpa}: 28.61/30
+   \hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}\\
+    &\\
+   %some other degree here
+   \end{tabular}

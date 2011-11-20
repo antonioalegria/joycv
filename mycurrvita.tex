@@ -1,0 +1,235 @@
+\documentclass[a4paper,10pt]{scrartcl} % KOMA-Script article
+% Use letter when sending to US/other letter-based country
+%\documentclass[letterpaper,10pt]{scrartcl}
+
+\reversemarginpar
+
+% ???
+\newcommand{\MarginDate}[1]{\marginpar{\raggedleft\itshape\small#1}}
+
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+
+\usepackage[LabelsAligned]{currvita}
+\usepackage[nochapters]{classicthesis}
+\usepackage{url}
+\usepackage{enumitem}
+
+\usepackage{xunicode} \usepackage{fontspec} \usepackage{xltxtra}
+
+% CUSTOMIZE
+
+% \usepackage[right=1cm]{geometry}
+
+% FONTS
+\defaultfontfeatures{Mapping=tex-text} % this is just part of fontspec boilerplate
+
+\renewcommand{\cvheadingfont}{\LARGE\color{Maroon}}
+\renewcommand{\cvlistheadingfont}{\large}
+\renewcommand{\cvlabelfont}{\qquad}
+
+
+% Setup hyperref package, and colours for links, text and headings
+\usepackage{hyperref}
+\hypersetup{colorlinks, breaklinks, urlcolor=Maroon, linkcolor=Maroon}
+
+\newlength{\datebox}\settowidth{\datebox}{Feb 1985--Nov 2011}
+\newlength{\trainingdatebox}\settowidth{\trainingdatebox}{\textit{\small{February 1985}}}
+\newlength{\langbox}\settowidth{\langbox}{Portuguese}
+
+\newcommand{\NewWorkExperience}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\textit{#1}}\hspace{1.5em} #2 #3%
+\vspace{0.5em}}
+
+\newcommand{\NewTraining}[2]{\noindent\hangindent=2em\hangafter=0 \parbox{\trainingdatebox}{\textit{\small{#1}}}\hspace{1.5em}\small{#2}\vspace{0.5em}}
+
+\newcommand{\NewConference}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\textit{\small{#1}}}\hspace{1.5em} \small{#2 #3}%
+\vspace{0.5em}}
+
+\newcommand{\TrainingInstitution}[1]{\noindent\hangindent=2em\hangafter=0 \parbox{\trainingdatebox}{}\hspace{1.5em}\small{#1}\vspace{0.5em}}
+
+
+\newcommand{\Sep}{\vspace{2em}}
+\newcommand{\TrainingSep}{\vspace{0.2em}{\centering{\textbf{$\cdotp$}\par\normalsize}}\vspace{0.3em}}
+\newcommand{\Highlights}[2]{\vspace{0.75em}\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\vspace{0.3em}\footnotesize{#2}\par\normalsize}
+
+\newcommand{\Author}[1]{\spacedallcaps{#1}}
+\newcommand{\PlaceAndDateOfBirth}[2]{\NewWorkExperience{}{\textit{#1}}{#2}}
+\newcommand{\Contact}[2]{\NewWorkExperience{#1}{#2}{}}
+\newcommand{\Section}[1]{\vspace{1.5em}\noindent\spacedlowsmallcaps{#1}\vspace{0.5em}}
+\newcommand{\Description}[2]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{\MarginDate{#1}#2}\par\normalsize}
+\newcommand{\SimpleDescription}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize}
+\newcommand{\Profile}[1]{\raggedright\footnotesize{#1}\par\normalsize}
+\newcommand{\Publication}[1]{\raggedright\footnotesize{#1}\par\normalsize}
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{cv}{\Author{António Alegria}}
+
+  \Section{Personal Data}
+  
+  \PlaceAndDateOfBirth{Born in Lisbon, Portugal}{February 6, 1985}
+
+  \Contact{email}{\href{mailto:antonio.mc.alegria@gmail.com}{antonio.mc.alegria@gmail.com}}
+
+  \Contact{phone}{(+351) 965 558 738}
+  
+  \Section{Profile}
+  
+  \Profile{Software Engineer who likes to be at the intersection of business and technology. Passionate and experienced in designing and implementing ``right-time'' Business Activity Monitoring applications using Complex Event Processing. Thrilled to learn, improve the status-quo and solve challenging problems using state-of-the-art tools. Skilled in Java but loves leveraging (J)Ruby's expressiveness to quickly build robust, maintainable and elegant systems.}
+  
+  \Section{Work Experience}
+
+  \NewWorkExperience{Current}{Portugal Telecom (PT) -- SAPO.pt,}{Lisbon}
+
+  \Description{Software Engineer}{Currently in the Big Data team developing event processing systems. Worked on the Mobile Apps team as an Android App developer.}
+
+  \Highlights{Highlights (Big Data):} {
+  \begin{itemize}[nosep,noitemsep,leftmargin=3.85em]
+    \item Developing SAPO Alerts, a domain-independent real-time event subscription and filtering platform used by PT and 3\textsuperscript{rd} parties (Java, XML, PostgreSQL, Netty, SOAP)
+  \end{itemize}
+  }
+
+  \Highlights{Highlights (Mobile):} {
+  \begin{itemize}[nosep,noitemsep,leftmargin=3.85em]
+    \item Implemented and shipped over 5 Android Apps including SAPO News -- SAPO's flagship App with over 70,000 users
+    \item Spearheaded Scrum implementation
+    \item Proactively managed and coordinated a large part of the SAPO News mobile Apps project
+  \end{itemize}
+  }
+
+  \Sep
+
+
+  \NewWorkExperience{Sep 2008 -- Jul 2010}{Portugal Telecom,}{Lisbon}
+
+  \Description{Software Engineer}{Core developer of realtime Business Activity Monitoring system using Complex Event Processing (CEP).}
+
+  \Highlights{Highlights:} {
+  \begin{itemize}[nosep,noitemsep,leftmargin=3.85em]
+    \item Designed and implemented core CEP system in Pulso (Esper, JRuby, ActiveMQ, Starling, MySQL)
+    \item Designed and implemented domain-independent BAM patterns and rules for business process and application monitoring solutions (Esper)
+    \item Implemented tens of real monitoring scenarios for several mission-critical business processes and applications in PT (Esper, Ruby)
+  \end{itemize}
+  }
+
+  \Sep
+
+  \NewWorkExperience{Sep 2008 -- Jul 2010}{Portugal Telecom,}{Lisbon}
+
+  \Description{Software Engineer Intern}{Developed and applied MSc research in PT where results were tested in three real-word Information Systems Architectures. Helped development of an in-house network application and infrastructure discovery and management system.}
+  
+  \Highlights{Highlights:} {
+  \begin{itemize}[nosep,noitemsep,leftmargin=3.85em]
+    \item Designed, implemented and applied an automatic IT architecture verification and discovery system that used deep passive traffic analysis and rule-based logic inference to run a ``fact-check'' on a proposed IT architecture model (Logtalk/Prolog, Ruby, C and an assortment of network traffic analysis tools)
+    \item Designed and implemented a wide range of deep packet analysis agents for enterprise application indentification and error detection (PADS, Ruby, C)
+  \end{itemize}
+  }
+
+  \Sep
+
+  \NewWorkExperience{Sep 2008 -- Jul 2010}{INESC-ID - Distributed Systems Group,}{Lisbon}
+
+  \Description{Intern}{Researched and implemented ad-hoc (mesh) network applications for mobile devices using Bluetooth, RF-ID and Microsoft .Net Compact Framework.}
+
+  \newpage
+
+  \Section{Higher Education}
+
+  \NewWorkExperience{November 2009}{Instituto Superior Técnico,}{Lisbon}
+
+  \Description{MSc in Computer Engineering}{Major: Software Engineering\ \ $\cdotp$\ \ Minor: Distributed Systems\newline Thesis: ``Automatic Verification of IT Architecture Models for Networked Information Systems''\newline Thesis Grade: 19/20\ \ $\cdotp$\ \  GPA: 16/20}
+
+  \Sep
+
+  \NewWorkExperience{July 2007}{Instituto Superior Técnico,}{Lisbon}
+
+  \Description{BSc in Computer Engineering}{Major: Software Engineering\ \ $\cdotp$\ \ Minor: Distributed Systems\ \ $\cdotp$\ \  GPA: 16/20}
+
+  \Section{Training and Certification}
+
+  \NewTraining{July 2011}{Lisbon Machine Learning School}
+
+  \SimpleDescription{Google-sponsored international summer school.}
+
+  \TrainingSep
+
+  \NewTraining{January 2011}{Scrum Alliance -- Certificate Scrum Master}
+  
+  \SimpleDescription{Institution: \spacedlowsmallcaps{Something, SA}}
+
+  \TrainingSep
+
+  \NewTraining{October 2009}{Initial Pedagogical Training for Trainers}
+
+  \SimpleDescription{Institution: \spacedlowsmallcaps{Portugal Telecom Inovação, SA}}
+
+  \TrainingSep
+
+  \NewTraining{June 2002}{Certificate of Proficiency in English}
+
+  \SimpleDescription{Institution: \spacedlowsmallcaps{University of Cambdrige, Local Examinations Syndicate}}
+
+  \Section{Publications}
+  
+  \Publication{\textbf{ALEGRIA, A.}, AND VASCONCELOS, A. \textbf{2010}. IT Architecture Automatic Verification: A Network Evidence-based Approach. In \textit{Proceedings of the Fourth IEEE International Conference on Research Challenges in Information Science}, RCIS 2010, Nice, France, May 2010, LOUCOPOULOS, P. AND CAVARERO, J.L., Eds. 1-12}
+  
+  \Section{Conferences \& Events}
+  
+  \NewConference{November 2011}{Codebits V,}{Lisbon}
+  
+  \Description{Speaker}{Presented talk \textit{Complex Event Processing with Esper}.\newline Video: \href{http://j.mp/cepvideo2011}{http://j.mp/cepvideo2011}\ \ $\cdotp$\ \  Slides: \href{http://j.mp/cepslides2011}{http://j.mp/cepslides2011}}
+  
+  \TrainingSep
+
+  \NewConference{May 2011}{Startup Weekend,}{Coimbra}
+
+  \TrainingSep
+
+  \NewConference{May 2010}{RCIS 2010,}{Nice, France}
+  
+  \Description{Speaker}{Presented paper \textit{IT Architecture Automatic Verification: A Network Evidence-based Approach}.\newline Slides: http://bit.ly/XXXXX}
+    
+
+  \Section{Main Skills \& Interests}
+
+  \Description{Programming Languages}{Ruby and JRuby (including Java integration)\ \ $\cdotp$\ \ Java\ \ $\cdotp$\ \ C\ \ $\cdotp$\ \ Prolog/Logtalk\ \ $\cdotp$\ \ Scala}
+
+  \Sep
+
+  \Description{Platforms \& Libraries}{Esper\ \ $\cdotp$\ \ Sinatra\ \ $\cdotp$\ \ Android\ \ $\cdotp$\ \  ActiveMQ, Starling/Kestrel, SAPO Broker}
+
+  \Sep
+
+  \Description{Databases}{MongoDB\ \ $\cdotp$\ \ MySQL\ \ $\cdotp$\ \ PostgreSQL}
+
+  \Sep
+  
+  \SimpleDescription{\parbox{\langbox}{\textsc{English}}\ \ $\cdotp$\ \  \ Fluent (Certificate of Proficiency in English)}
+  
+  \vspace{0.5em}
+  
+  \SimpleDescription{\parbox{\langbox}{\textsc{Spanish}}\ \ $\cdotp$\ \  \ Competent}
+
+  \vspace{0.5em}
+  
+  \SimpleDescription{\parbox{\langbox}{\textsc{French}}\ \ $\cdotp$\ \  \ Average}
+  \MarginDate{Languages}
+
+  \vspace{0.5em}
+
+  \SimpleDescription{\parbox{\langbox}{\textsc{Japanese}}\ \ $\cdotp$\ \  \ Basic}
+  
+  \vspace{0.5em}
+  
+  \SimpleDescription{\parbox{\langbox}{\textsc{Portuguese}}\ \ $\cdotp$\ \  \ Mother Tongue}
+  
+  \Sep
+
+  \Description{Interests}{CEP\ \ $\cdotp$\ \ BAM\ \ $\cdotp$\ \ Ruby\ \ $\cdotp$\ \ Scrum\ \ $\cdotp$\ \ Product Design\ \ $\cdotp$\ \ Startups}
+
+\enlargethispage{\baselineskip}
+\end{cv}
+\end{document}
+
