@@ -1,0 +1,59 @@
+\reversemarginpar
+
+% ???
+\newcommand{\MarginDate}[1]{\marginpar{\raggedleft\itshape\small#1}}
+
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+
+\usepackage[LabelsAligned]{currvita}
+\usepackage[nochapters]{classicthesis}
+\usepackage{url}
+\usepackage{enumitem}
+
+\usepackage{xunicode} \usepackage{fontspec} \usepackage{xltxtra}
+
+% CUSTOMIZE
+
+% \usepackage[right=1cm]{geometry}
+
+% FONTS
+\defaultfontfeatures{Mapping=tex-text} % this is just part of fontspec boilerplate
+
+\renewcommand{\cvheadingfont}{\LARGE\color{Maroon}}
+\renewcommand{\cvlistheadingfont}{\large}
+\renewcommand{\cvlabelfont}{\qquad}
+\ProvidesPackage{joycv}
+
+% Setup hyperref package, and colours for links, text and headings
+\usepackage{hyperref}
+\hypersetup{colorlinks, breaklinks, urlcolor=Maroon, linkcolor=Maroon}
+
+\newlength{\datebox}\settowidth{\datebox}{Feb 1985--Nov 2011}
+\newlength{\trainingdatebox}\settowidth{\trainingdatebox}{\textit{\small{February 1985}}}
+\newlength{\langbox}\settowidth{\langbox}{Portuguese}
+
+\newcommand{\NewWorkExperience}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\textit{#1}}\hspace{1.5em} #2 #3%
+\vspace{0.5em}}
+
+\newcommand{\NewTraining}[2]{\noindent\hangindent=2em\hangafter=0 \parbox{\trainingdatebox}{\textit{\small{#1}}}\hspace{1.5em}\small{#2}\vspace{0.5em}}
+
+\newcommand{\NewConference}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\textit{\small{#1}}}\hspace{1.5em} \small{#2 #3}%
+\vspace{0.5em}}
+
+\newcommand{\TrainingInstitution}[1]{\noindent\hangindent=2em\hangafter=0 \parbox{\trainingdatebox}{}\hspace{1.5em}\small{#1}\vspace{0.5em}}
+
+
+\newcommand{\Sep}{\vspace{2em}}
+\newcommand{\TrainingSep}{\vspace{0.2em}{\centering{\textbf{$\cdotp$}\par\normalsize}}\vspace{0.3em}}
+\newcommand{\Highlights}[2]{\vspace{0.75em}\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\vspace{0.3em}\footnotesize{#2}\par\normalsize}
+
+\newcommand{\Author}[1]{\spacedallcaps{#1}}
+\newcommand{\PlaceAndDateOfBirth}[2]{\NewWorkExperience{}{\textit{#1}}{#2}}
+\newcommand{\Contact}[2]{\NewWorkExperience{#1}{#2}{}}
+\newcommand{\Section}[1]{\vspace{1.5em}\noindent\spacedlowsmallcaps{#1}\vspace{0.5em}}
+\newcommand{\Description}[2]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{\MarginDate{#1}#2}\par\normalsize}
+\newcommand{\SimpleDescription}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize}
+\newcommand{\Profile}[1]{\raggedright\footnotesize{#1}\par\normalsize}
+\newcommand{\Publication}[1]{\raggedright\footnotesize{#1}\par\normalsize}
