@@ -17,7 +17,7 @@ or
 	pdflatex cv.tex
 
 If you are on Mac OS X and use MacTeX Basic you will need to install the
-following packages (sudo tlmgr install <package>).
+following packages (e.g. *sudo tlmgr install PACKAGE_NAME*):
 
 - currvita
 - classicthesis
