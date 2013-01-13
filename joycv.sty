@@ -14,6 +14,9 @@
 
 \usepackage{xunicode} \usepackage{fontspec} \usepackage{xltxtra}
 
+\usepackage{graphicx}
+\usepackage{float}
+
 % CUSTOMIZE
 
 % \usepackage[right=1cm]{geometry}
@@ -31,7 +34,7 @@
 \hypersetup{colorlinks, breaklinks, urlcolor=Maroon, linkcolor=Maroon}
 
 \newlength{\datebox}\settowidth{\datebox}{Feb 1985--Nov 2011}
-\newlength{\trainingdatebox}\settowidth{\trainingdatebox}{\textit{\small{February 1985}}}
+\newlength{\trainingdatebox}\settowidth{\trainingdatebox}{\textit{\small{September 1985}}}
 \newlength{\langbox}\settowidth{\langbox}{Portuguese}
 
 \newcommand{\NewWorkExperience}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\textit{#1}}\hspace{1.5em} #2 #3%
@@ -57,3 +60,8 @@
 \newcommand{\SimpleDescription}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize}
 \newcommand{\Profile}[1]{\raggedright\footnotesize{#1}\par\normalsize}
 \newcommand{\Publication}[1]{\raggedright\footnotesize{#1}\par\normalsize}
+
+% Pretty contacts
+
+\newcommand{\Twitter}[1]{\Contact{\includegraphics[width=12pt]{twitter-blue-cropped}}{\href{http://twitter.com/#1}{@#1}}}
+\newcommand{\LinkedIn}[1]{\Contact{\includegraphics[width=12pt]{linkedin-logo}}{\href{http://linkedin.com/in/#1}{http://linkedin.com/in/#1}}}
