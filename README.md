@@ -27,6 +27,8 @@ following packages (e.g. *sudo tlmgr install PACKAGE_NAME*):
 - tocloft
 - mathpazo
 - lm
+- zapfding
+- enumitem
 
 
 Feel free to fork and edit! I will be happy to integrate patches and improvements.
